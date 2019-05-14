@@ -1,0 +1,29 @@
+
+linux 命令
+who am i 查看当前登录用户
+
+cat /etc/passwd  查看所有的用户组和权限
+
+chmod 777 ./demo.sh  设置执行权限
+
+./demo.sh  执行sh脚本
+
+set ff? 查看当前文本格式
+
+set ff=unix 把当前文本设置为unix
+
+>  覆盖写文件
+>> 追加文件
+
+// 脚本开头
+#!/bin/bash
+// 数组，空格隔开每个元素
+arr_number=("6C5619E1D4FB44FAB6A43C0FEA8C606B"  "DB23FC08C2847408875DD8B1DC8E3AD");
+
+// 循环数组
+for v in ${arr_number[@]};
+do
+        echo "------------------------------"$v"----begin-----------------" >>/tmp/acc.log;
+        grep -B 2 -A 2 $v  /app/weblogic/shop-online-storage-web/logs/app.log >>/tmp/acc.log;
+        echo "------------------------------"$v"----end-----------------" >>/tmp/acc.log;
+ done
